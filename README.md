@@ -1,2 +1,2 @@
 # Mini-Project
-mini project of college
+Mini Project of College
