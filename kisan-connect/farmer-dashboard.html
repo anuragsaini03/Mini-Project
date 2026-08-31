@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Farmer Dashboard | KisanConnect</title>
+
+<link rel="stylesheet"
+      href="css/style.css">
+
+<style>
+
+.dashboard {
+    padding: 60px 8%;
+    background: #f7faf6;
+    min-height: 80vh;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+    font-size: 35px;
+}
+
+.dashboard-header p {
+    color: #777;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+
+.dashboard-card span {
+    color: #777;
+}
+
+.dashboard-card h2 {
+    margin-top: 10px;
+    color: #2e7d32;
+}
+
+.dashboard-section {
+    margin-top: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.status {
+    background: #e4f3e4;
+    color: #2e7d32;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+@media(max-width:800px) {
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🌾 <span>Kisan</span>Connect
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="marketplace.html">Marketplace</a>
+    </nav>
+
+    <a href="add-produce.html"
+       class="btn btn-primary">
+        + Add Produce
+    </a>
+
+</header>
+
+
+<section class="dashboard">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>Welcome, Farmer 👨‍🌾</h1>
+
+            <p>
+                Manage your produce and orders.
+            </p>
+
+        </div>
+
+        <a href="add-produce.html"
+           class="btn btn-primary">
+            + Add New Produce
+        </a>
+
+    </div>
+
+
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+
+            <span>Total Listings</span>
+
+            <h2>12</h2>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <span>Active Orders</span>
+
+            <h2>05</h2>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <span>Total Sales</span>
+
+            <h2>₹42,500</h2>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <span>Rating</span>
+
+            <h2>⭐ 4.8</h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-section">
+
+        <h2>My Produce</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Produce</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>🍅 Tomato</td>
+                    <td>500 kg</td>
+                    <td>₹25/kg</td>
+                    <td>
+                        <span class="status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>🥔 Potato</td>
+                    <td>1000 kg</td>
+                    <td>₹20/kg</td>
+                    <td>
+                        <span class="status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>🧅 Onion</td>
+                    <td>700 kg</td>
+                    <td>₹30/kg</td>
+                    <td>
+                        <span class="status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+</body>
+</html>

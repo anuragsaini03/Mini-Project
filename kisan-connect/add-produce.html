@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Add Produce | KisanConnect</title>
+
+<link rel="stylesheet"
+      href="css/style.css">
+
+<style>
+
+.form-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+}
+
+.form-container h1 {
+    margin-bottom: 10px;
+}
+
+.form-container > p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🌾 <span>Kisan</span>Connect
+    </div>
+
+    <a href="farmer-dashboard.html"
+       class="btn btn-outline">
+        ← Dashboard
+    </a>
+
+</header>
+
+
+<div class="form-container">
+
+    <h1>Add Your Produce 🌱</h1>
+
+    <p>
+        Enter your produce details so buyers can find you.
+    </p>
+
+
+    <form id="produceForm">
+
+        <div class="form-group">
+
+            <label>Produce Name</label>
+
+            <input
+                type="text"
+                id="produceName"
+                placeholder="e.g. Tomato"
+                required>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>Quantity (KG)</label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    placeholder="500"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Price per KG</label>
+
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="25"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>Quality</label>
+
+                <select id="quality">
+
+                    <option>Premium</option>
+                    <option>Standard</option>
+                    <option>Economy</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Meerut, UP"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Harvest Date</label>
+
+            <input
+                type="date"
+                id="harvestDate"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Description</label>
+
+            <textarea
+                id="description"
+                rows="4"
+                placeholder="Describe your produce...">
+            </textarea>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+            style="width:100%;">
+
+            Publish Produce
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<script>
+
+document
+.getElementById("produceForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const produce = {
+        name: document.getElementById("produceName").value,
+        quantity: document.getElementById("quantity").value,
+        price: document.getElementById("price").value,
+        quality: document.getElementById("quality").value,
+        location: document.getElementById("location").value,
+        harvestDate: document.getElementById("harvestDate").value,
+        description: document.getElementById("description").value
+    };
+
+    console.log("Produce:", produce);
+
+    alert(
+        "✅ Produce published successfully!"
+    );
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marketplace | KisanConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .market-header {
+            padding: 70px 8%;
+            background: #f4f9f3;
+        }
+
+        .market-header h1 {
+            font-size: 45px;
+        }
+
+        .search-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .search-area input,
+        .search-area select {
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .search-area input {
+            width: 350px;
+        }
+
+        .market-container {
+            padding: 60px 8%;
+        }
+
+        .market-container .product-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media(max-width:700px) {
+            .search-area {
+                flex-direction: column;
+            }
+
+            .search-area input {
+                width: 100%;
+            }
+
+            .market-container .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🌾 <span>Kisan</span>Connect
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="marketplace.html">Marketplace</a>
+    </nav>
+
+    <a href="farmer-dashboard.html"
+       class="btn btn-primary">
+        Farmer Dashboard
+    </a>
+
+</header>
+
+
+<section class="market-header">
+
+    <span class="badge">🛒 MARKETPLACE</span>
+
+    <h1>Buy Fresh Produce Directly From Farmers</h1>
+
+    <p>
+        Find fresh agricultural products at better prices.
+    </p>
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search tomatoes, potatoes..."
+        >
+
+        <select id="locationFilter">
+
+            <option value="">All Locations</option>
+            <option value="Meerut">Meerut</option>
+            <option value="Agra">Agra</option>
+            <option value="Nashik">Nashik</option>
+            <option value="Jaipur">Jaipur</option>
+
+        </select>
+
+        <button
+            class="btn btn-primary"
+            onclick="searchProducts()">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+<section class="market-container">
+
+    <div class="product-grid" id="productGrid">
+
+        <div class="product-card">
+
+            <div class="product-img tomato">
+                🍅
+            </div>
+
+            <div class="product-info">
+
+                <span class="location">
+                    📍 Meerut, UP
+                </span>
+
+                <h3>Fresh Tomatoes</h3>
+
+                <p>Available: 500 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹25/kg</strong>
+
+                    <a href="product.html">
+                        Buy →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <div class="product-img potato">
+                🥔
+            </div>
+
+            <div class="product-info">
+
+                <span class="location">
+                    📍 Agra, UP
+                </span>
+
+                <h3>Fresh Potatoes</h3>
+
+                <p>Available: 1000 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹20/kg</strong>
+
+                    <a href="product.html">
+                        Buy →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <div class="product-img onion">
+                🧅
+            </div>
+
+            <div class="product-info">
+
+                <span class="location">
+                    📍 Nashik, MH
+                </span>
+
+                <h3>Fresh Onions</h3>
+
+                <p>Available: 700 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹30/kg</strong>
+
+                    <a href="product.html">
+                        Buy →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function searchProducts() {
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const location =
+        document
+        .getElementById("locationFilter")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".product-card");
+
+    cards.forEach(card => {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        const matchesSearch =
+            text.includes(search);
+
+        const matchesLocation =
+            !location ||
+            text.includes(location);
+
+        if (matchesSearch && matchesLocation) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
