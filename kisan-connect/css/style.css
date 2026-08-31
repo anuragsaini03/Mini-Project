@@ -472,7 +472,15 @@ footer {
 
 /* RESPONSIVE */
 
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
 @media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
 
     .navbar nav {
         display: none;
@@ -480,12 +488,19 @@ footer {
 
     .hero {
         flex-direction: column;
-        gap: 60px;
+        min-height: auto;
+        padding: 50px 5%;
+        gap: 50px;
     }
 
-    .hero-content,
+    .hero-content {
+        width: 100%;
+    }
+
     .hero-card {
         width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .feature-grid,
@@ -497,6 +512,7 @@ footer {
     .sms-section {
         flex-direction: column;
         gap: 40px;
+        align-items: flex-start;
     }
 
     .sms-section > div:first-child {
@@ -504,53 +520,236 @@ footer {
     }
 }
 
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
 @media (max-width: 600px) {
 
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+
     .navbar {
-        padding: 0 5%;
+        height: 65px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .nav-buttons {
+        gap: 5px;
+    }
+
+    .nav-buttons .btn {
+        padding: 8px 10px;
+        font-size: 12px;
     }
 
     .nav-buttons .btn-outline {
         display: none;
     }
 
+
+    /* HERO */
+
     .hero {
-        padding: 50px 5%;
+        width: 100%;
+        min-height: auto;
+        padding: 40px 20px 70px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 38px;
+        line-height: 1.15;
+        margin: 18px 0;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.6;
+        width: 100%;
     }
 
     .hero-buttons {
+        width: 100%;
         flex-direction: column;
+        gap: 12px;
     }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* STATS */
 
     .stats {
-        gap: 20px;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 35px;
     }
 
-    .feature-grid,
-    .product-grid,
-    .steps {
-        grid-template-columns: 1fr;
+    .stats strong {
+        font-size: 19px;
     }
+
+    .stats span {
+        font-size: 12px;
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-card {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        margin: 0;
+    }
+
+    .farm-image {
+        width: 100%;
+        height: 280px;
+        border-radius: 20px;
+        font-size: 90px;
+    }
+
+
+    /* PRICE CARD */
+
+    .price-card {
+        position: absolute;
+
+        /* IMPORTANT */
+        left: 15px;
+        bottom: -30px;
+
+        width: 210px;
+        max-width: calc(100% - 30px);
+
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .price-card span {
+        font-size: 11px;
+    }
+
+    .price-card h3 {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 25px;
+    }
+
+    .price-card p {
+        font-size: 10px;
+    }
+
+
+    /* SECTIONS */
 
     .features,
     .market-preview,
     .how-it-works {
-        padding: 60px 5%;
+        padding: 60px 20px;
     }
 
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .section-title p {
+        font-size: 14px;
+    }
+
+
+    /* FEATURES */
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+
+    /* PRODUCTS */
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    /* STEPS */
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+
+    /* SMS SECTION */
+
     .sms-section {
-        padding: 60px 5%;
+        padding: 60px 20px;
+        gap: 35px;
+    }
+
+    .sms-section h2 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .sms-section p {
+        font-size: 14px;
     }
 
     .sms-box {
         width: 100%;
+        padding: 15px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 50px 20px 20px;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
+
 }
